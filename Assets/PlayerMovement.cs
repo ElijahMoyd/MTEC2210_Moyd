@@ -22,11 +22,12 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         float xMove = Input.GetAxis("Horizontal");
-
+        float yMove = Input.GetAxis("Vertical");
         float xMovement = xMove * speed * Time.deltaTime;
-
+        float yMovement = yMove * speed * Time.deltaTime;
 
         transform.Translate(xMovement, 0, 0);
+        transform.Translate(0, yMovement, 0);
         //transform.position = new Vector3(transform.position.x + xMovement, 0, 0);
 
 
