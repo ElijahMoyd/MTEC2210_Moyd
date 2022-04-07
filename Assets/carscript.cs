@@ -19,4 +19,13 @@ using UnityEngine;
             transform.position += Vector3.right * speed * Time.deltaTime;
             //hint: In Unity you can get Vector (direction) shorthands like this: Vector3.up   
         }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform)
+        {
+            PlayerManager.isGameOver = true;
+            Destroy(collision.gameObject);
+        }
     }
+}
