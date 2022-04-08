@@ -22,7 +22,7 @@ using UnityEngine;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform)
+        if (collision.gameObject.tag=="Player")
         {
             PlayerManager.isGameOver = true;
             Destroy(collision.gameObject);
